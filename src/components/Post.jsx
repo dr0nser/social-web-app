@@ -4,7 +4,7 @@ const Post = (props) => {
   const { post } = props;
   async function deletePost(e) {
     const id = props.id;
-    const response = await fetch(`https://social--mern-backend.herokuapp.com/posts/${id}`, {
+    await fetch(`https://social--mern-backend.herokuapp.com/posts/${id}`, {
       method: "DELETE",
     });
     props.setPosts(props.posts.filter((post) => post._id !== id));
